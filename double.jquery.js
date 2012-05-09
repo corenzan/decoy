@@ -1,18 +1,16 @@
 /*
- * Double v0.1 2012-05-08 23:54:09 -0300
+ * Double v0.2 2012-05-09 10:06:33 -0300
  * by Arthur Corenzan <arthur@corenzan.com>
  * licensed under http://creativecommons.org/licenses/by/3.0
- * more on http://github.com/haggen/double
+ * more on http://haggen.github.com/double
  */
 ;(function($, undefined) {
   $.fn['double'] = function() { 
     if(!this._double) {
-      // console.log('Hiring a double');
+      this._original = this.clone(true);
+      this._double   = this.clone(true);
 
-      this._double = this.clone(true);
       this.replaceWith(this._double);
-    } else {
-      // console.log('Already has a double');
     }
 
     return this._double;
@@ -20,10 +18,7 @@
 
   $.fn.recall = function() {
     if(this._double) {
-      // console.log('Recalling');
-
-      this._double.replaceWith(this);
-
+      this._double.replaceWith(this._original);
       delete this._double;
       return this;
     }

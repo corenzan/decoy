@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Double by haggen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Double</h1>
+        <p>jQuery plugin for hiring doubles</p>
+        <p class="view"><a href="https://github.com/haggen/double">View the Project on GitHub <small>haggen/double</small></a></p>
+        <ul>
+          <li><a href="https://github.com/haggen/double/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/haggen/double/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/haggen/double">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Double is a jQuery plugin for hiring doubles for your elements.</p>
+
+<p>Ever wished to change an element's properties, style and behavior and instantly restore to what it was before the mess ?
+That's what Double enables you to do. You make a double, change it, and then, eventually, recall the original.</p>
+
+<h3>Usage:</h3>
+
+<pre><code>var box = $('#box');
+
+box.css('background', 'black'); // We set its background to black
+box.double().css('background', 'red'); // Now it has a red background, but we are actually looking for its double
+box.recall(); // Here we recall the original, restoring its background to black
+</code></pre>
+
+<p>The method <code>double()</code> is a reference to the element's double. You can chain multiple calls just like you do with regular jQuery objects. That's because it is a regular jQuery object.</p>
+
+<pre><code>box.double().text("Hello, I'm a double!").css('font-size', '48px');
+box.double().text("I do dangerous stuff for you.");
+
+box.recall();
+</code></pre>
+
+<p>Whatever changes you've done to its double, it will be undone when you recall the original. All styles and bindings, everything back to what it was before the first time you called <code>double()</code>.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/haggen">haggen</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>

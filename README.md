@@ -12,7 +12,7 @@ That's what Double enables you to do. You make a double, change it, and then, ev
 var box = $('#box');
 
 box.css('background', 'black'); // We set its background to black
-box.double().css('background', 'red'); // Now it has a red background, but we are actually looking for its double
+box.double().css('background', 'red'); // Now it has a red background, but we are actually looking at its double
 box.recall(); // Here we recall the original, restoring its background to black
 ```
 

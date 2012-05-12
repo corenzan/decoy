@@ -26,7 +26,6 @@
 
       //save event listeners for later
       listeners = that.data('events');
-      console.log(listeners);
 
       that.replaceWith(clone);
       that.data('clone', clone);

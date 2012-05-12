@@ -36,7 +36,6 @@
       $.each(listeners || {}, function(e) {
 
         $.each(this, function(i, data) {
-          console.log(e, data);
           that.bind(e, data.handler);
         });
       });

@@ -1,26 +1,70 @@
 /*
- * Double v0.2 2012-05-09 10:06:33 -0300
+ * Double v0.5 2012-05-12 10:49:47 -0300
  * by Arthur Corenzan <arthur@corenzan.com>
  * licensed under http://creativecommons.org/licenses/by/3.0
  * more on http://haggen.github.com/double
  */
 ;(function($, undefined) {
   $.fn['double'] = function() { 
-    if(!this._double) {
-      this._original = this.clone(true);
-      this._double   = this.clone(true);
+    return this.map(function() {
+      var that, original, clone, listeners;
 
-      this.replaceWith(this._double);
-    }
+      that = $(this);
+      original = that.data('original');
+      clone = that.data('clone');
 
-    return this._double;
+      if(original) {
+        return that[0];
+      }
+
+      if(clone) {
+        return clone[0];
+      }
+
+      clone = that.clone(true);
+      clone.data('original', that);
+
+      //save event listeners for later
+      listeners = that.data('events');
+      console.log(listeners);
+
+      that.replaceWith(clone);
+      that.data('clone', clone);
+
+      //after replaceWith it has lost any event 
+      //listeners, bind them again
+      $.each(listeners || {}, function(e) {
+
+        $.each(this, function(i, data) {
+          console.log(e, data);
+          that.bind(e, data.handler);
+        });
+      });
+
+      return clone[0];
+    });
   };
 
   $.fn.recall = function() {
-    if(this._double) {
-      this._double.replaceWith(this._original);
-      delete this._double;
-      return this;
-    }
+    return this.map(function() {
+      var that, original, clone;
+
+      that = $(this);
+      original = that.data('original');
+      clone = that.data('clone');
+
+      if(original) {
+        that.replaceWith(original);
+        original.removeData('clone', null);
+        return original[0];
+      }
+
+      if(clone) {
+        clone.replaceWith(that);
+        that.removeData('clone', null);
+      }
+
+      return that[0];
+    });
   };
 }(window.jQuery));

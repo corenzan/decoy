@@ -1,5 +1,5 @@
 /*
- * Double v0.5 2012-05-12 10:49:47 -0300
+ * Double v1.0.0 2012-05-12 10:49:47 -0300
  * by Arthur Corenzan <arthur@corenzan.com>
  * licensed under http://creativecommons.org/licenses/by/3.0
  * more on http://haggen.github.com/double

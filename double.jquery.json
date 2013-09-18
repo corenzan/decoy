@@ -1,0 +1,35 @@
+{
+  "name": "double",
+  "title": "Double",
+  "description": "Double is a jQuery plugin for hiring doubles for your elements.",
+  "keywords": [
+    "double",
+    "clone",
+    "revert",
+    "restore"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Arthur Corenzan",
+    "email": "arthur@corenzan.com"
+  },
+  "maintainers": [
+    {
+      "name": "Arthur Corenzan",
+      "email": "arthur@corenzan.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "CC BY-SA",
+      "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+    }
+  ],
+  "bugs": "https://github.com/haggen/double/issues",
+  "homepage": "http://haggen.github.io/double",
+  "docs": "https://github.com/haggen/double/blob/master/README.md",
+  "download": "https://github.com/haggen/double/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.8"
+  }
+}

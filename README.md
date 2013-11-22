@@ -5,7 +5,7 @@
 Ever wished to change an element's properties, style and behavior and instantly restore to what it was before the mess ?
 That's what Decoy enables you to do. You make a decoy, change it, and then, eventually, restore the original.
 
-### Usage:
+### Usage
 
 ```javascript
 var box = $('#box');
@@ -24,6 +24,10 @@ box.decoy().text("I do dangerous stuff for you.");
 
 Whatever changes you've done to its decoy, it will be undone when you restore the original. All styles and bindings, everything back to what it was before the first time you called `decoy()` on it.
 
-### Note:
+### Note
 
 The plugin has been renamed to **Decoy** since *double* is a reserved word and would cause trouble in the future.
+
+## License
+
+Licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Double by haggen</title>
+    <title>Decoy by haggen</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
@@ -17,19 +17,19 @@
   <body>
 
       <header>
-        <h1>Double</h1>
-        <p>jQuery plugin for hiring doubles</p>
+        <h1>Decoy</h1>
+        <p>jQuery plugin to make decoys for your elements.</p>
       </header>
 
       <div id="banner">
         <span id="logo"></span>
 
-        <a href="https://github.com/haggen/double" class="button fork"><strong>View On GitHub</strong></a>
+        <a href="https://github.com/haggen/decoy" class="button fork"><strong>View On GitHub</strong></a>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
-            <li><a href="https://github.com/haggen/double/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/haggen/double/tarball/master" class="button">TAR</a></li>
+            <li><a href="https://github.com/haggen/decoy/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/haggen/decoy/tarball/master" class="button">TAR</a></li>
           </ul>
         </div>
       </div><!-- end banner -->
@@ -40,32 +40,40 @@
       </nav>
       <section>
         <h1>
-<a name="double" class="anchor" href="#double"><span class="octicon octicon-link"></span></a>Double</h1>
+<a id="decoy-formerly-double" class="anchor" href="#decoy-formerly-double" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decoy (formerly Double)</h1>
 
-<p>Double is a jQuery plugin for hiring doubles for your elements.</p>
+<blockquote>
+<p>jQuery plugin to make decoys for your elements.</p>
+</blockquote>
 
 <p>Ever wished to change an element's properties, style and behavior and instantly restore to what it was before the mess ?
-That's what Double enables you to do. You make a double, change it, and then, eventually, recall the original.</p>
+That's what Decoy enables you to do. You make a decoy, change it, and then, eventually, restore the original.</p>
 
 <h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<pre><code>var box = $('#box');
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> box <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#box<span class="pl-pds">'</span></span>);
 
-box.css('background', 'black'); // We set its background to black
-box.double().css('background', 'red'); // Now it has a red background, but we are actually looking at its double
-box.recall(); // Here we recall the original, restoring its background to black
-</code></pre>
+<span class="pl-smi">box</span>.<span class="pl-en">css</span>(<span class="pl-s"><span class="pl-pds">'</span>background<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>); <span class="pl-c">// We set its background to black</span>
+<span class="pl-smi">box</span>.<span class="pl-en">decoy</span>().<span class="pl-en">css</span>(<span class="pl-s"><span class="pl-pds">'</span>background<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>); <span class="pl-c">// Now it has a red background, but we are actually looking at its decoy</span>
+<span class="pl-smi">box</span>.<span class="pl-en">restore</span>(); <span class="pl-c">// Here we recover the original, restoring its background to black</span></pre></div>
 
-<p>The method <code>double()</code> is a reference to the element's double. You can chain multiple calls just like you do with regular jQuery objects. That's because it is a regular jQuery object.</p>
+<p>The method <code>decoy()</code> is a reference to the element's decoy. You can chain multiple calls just like you do with regular jQuery objects. That's because it is a regular jQuery object.</p>
 
-<pre><code>box.double().text("Hello, I'm a double!").css('font-size', '48px');
-box.double().text("I do dangerous stuff for you.");
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">box</span>.<span class="pl-en">decoy</span>().<span class="pl-c1">text</span>(<span class="pl-s"><span class="pl-pds">"</span>Hello, I'm a decoy!<span class="pl-pds">"</span></span>).<span class="pl-en">css</span>(<span class="pl-s"><span class="pl-pds">'</span>font-size<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>48px<span class="pl-pds">'</span></span>);
+<span class="pl-smi">box</span>.<span class="pl-en">decoy</span>().<span class="pl-c1">text</span>(<span class="pl-s"><span class="pl-pds">"</span>I do dangerous stuff for you.<span class="pl-pds">"</span></span>);</pre></div>
 
-box.recall();
-</code></pre>
+<p>Whatever changes you've done to its decoy, it will be undone when you restore the original. All styles and bindings, everything back to what it was before the first time you called <code>decoy()</code> on it.</p>
 
-<p>Whatever changes you've done to its double, it will be undone when you recall the original. All styles and bindings, everything back to what it was before the first time you called <code>double()</code>.</p>
+<h3>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note</h3>
+
+<p>The plugin has been renamed to <strong>Decoy</strong> since <em>double</em> is a reserved word and would cause trouble in the future.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported</a></p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/haggen">haggen</a></p>

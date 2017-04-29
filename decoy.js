@@ -1,6 +1,5 @@
-// Decoy v2.0.0 2013-11-22T15:26:47-0200
-// by Arthur Corenzan <arthur@corenzan.com>
-// more on github.com/haggen/decoy
+// Decoy 2.0.0
+// More on https://github.com/corenzan/decoy
 ;(function($) {
   $.fn.decoy = function() {
     return this.map(function() {
@@ -9,7 +8,7 @@
       that = $(this);
       decoy = that.data('decoy');
 
-      if(!decoy) {
+      if (!decoy) {
         decoy = that.clone(true, true);
         decoy.data('actual', that);
         that.data('decoy', decoy);
@@ -19,15 +18,15 @@
       return decoy[0];
     });
   };
-             
+
   $.fn.restore = function() {
     return this.map(function() {
       var that, actual;
-      
+
       that = $(this);
       decoy = that.data('decoy');
 
-      if(decoy) {
+      if (decoy) {
         decoy.before(that).detach();
         that.removeData('decoy');
       }

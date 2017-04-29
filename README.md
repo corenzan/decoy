@@ -1,33 +1,28 @@
-# Decoy (formerly Double)
+# Decoy
 
-> jQuery plugin to make decoys for your elements.
+> Decoys for your elements.
 
-Ever wished to change an element's properties, style and behavior and instantly restore to what it was before the mess ?
-That's what Decoy enables you to do. You make a decoy, change it, and then, eventually, restore the original.
+Ever wished to change an element's properties, style or behavior and then easily restore to what it was before the mess? That's what Decoy enables you to do. You create a decoy, change it however you like, and then, eventually, restore the original.
 
-### Usage
+## Usage
 
-```javascript
+```js
 var box = $('#box');
 
-box.css('background', 'black'); // We set its background to black
-box.decoy().css('background', 'red'); // Now it has a red background, but we are actually looking at its decoy
-box.restore(); // Here we recover the original, restoring its background to black
+box.css('background', 'black'); // We change its background to black.
+box.decoy().css('background', 'red'); // Now it is red, but we are actually looking at its decoy.
+box.restore(); // Here we recover the original, restoring its background to black.
 ```
 
-The method `decoy()` is a reference to the element's decoy. You can chain multiple calls just like you do with regular jQuery objects. That's because it is a regular jQuery object.
+The method `decoy()` is a reference to the element's decoy. You can chain multiple calls just like you do with regular jQuery objects.
 
-```javascript
+```js
 box.decoy().text("Hello, I'm a decoy!").css('font-size', '48px');
 box.decoy().text("I do dangerous stuff for you.");
 ```
 
-Whatever changes you've done to its decoy, it will be undone when you restore the original. All styles and bindings, everything back to what it was before the first time you called `decoy()` on it.
-
-### Note
-
-The plugin has been renamed to **Decoy** since *double* is a reserved word and would cause trouble in the future.
+Whatever changes you've done to its decoy, they all will be undone when you restore the original. All styles, bindings, and everything back to what it was before the first time you called `decoy()`.
 
 ## License
 
-Licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+This project is licensed under MIT. See [LICENSE.md](LICENSE.md) for full notice.

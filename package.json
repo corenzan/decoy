@@ -1,5 +1,5 @@
 {
-  "name": "decoy",
+  "name": "jquery-decoy",
   "version": "2.0.0",
   "description": "Decoy for your elements.",
   "main": "decoy.js",
